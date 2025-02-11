@@ -42,9 +42,7 @@ const router = createBrowserRouter([
                 loader: async ({params}) => {
                     const res = await fetch ('../Service.json');
                     const data = await res.json();
-                    console.log('data',data, params);
                     const signle_data = data.find((data) => data.id == params.id);
-                    console.log(signle_data, data, params);
                     return signle_data;
                 }
             },
