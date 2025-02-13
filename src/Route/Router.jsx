@@ -6,6 +6,8 @@ import Login from "../Pages/Login";
 import My_appoinments from "../Pages/My_appoinments";
 import Profile from "../Pages/Profile";
 import Details from "../Components/Details";
+import Register from "../Pages/Register";
+import Private_route from "../Pages/Private_route";
 
 const router = createBrowserRouter([
     {
@@ -38,7 +40,9 @@ const router = createBrowserRouter([
             },
             {
                 path: 'details/:id',
-                element: <Details></Details>,
+                element: <Private_route>
+                    <Details></Details>
+                </Private_route>,
                 loader: async ({params}) => {
                     const res = await fetch ('../Service.json');
                     const data = await res.json();
@@ -53,6 +57,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
 
         ]

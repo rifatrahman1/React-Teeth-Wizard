@@ -6,6 +6,12 @@ const Modal = () => {
         event.preventDefault();
         console.log(event);
         
+        const first = event.target.first.value;
+        const last = event.target.last.value;
+        const number = event.target.number.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        console.log(first, last, number, email, password);
     }
     return (
 //         {/* Open the modal using document.getElementById('ID').showModal() method */}
@@ -21,7 +27,6 @@ const Modal = () => {
             <input className='border-b-2 mt-5 border-x-0 border-t-0 text-black font-bold border-[#C5C5C5] focus:outline-none px-2 py-3 rounded-none' type="number" name="number" placeholder='Confirm Password' id="" />
             <input className='border-b-2 mt-5 border-x-0 border-t-0 font-bold border-[#C5C5C5] focus:outline-none px-2 py-3 rounded-none' type="email" name="email" placeholder='Username or Email' id="" />
             <input className='border-b-2 mt-5 border-x-0 border-t-0 font-bold border-[#C5C5C5] focus:outline-none px-2 py-3 rounded-none' type="password" name="password" placeholder='Password' id="" />
-            
             <div className='flex items-center mt-6 justify-between font-bold'>
               <div className='flex items-center gap-4'><input type="checkbox" name="box" id="" />
               <p>Remember Me</p></div>
